@@ -53,3 +53,5 @@ console.log(palavraSecreta);
 if(tentativas == 0) {
   console.log("PERDEU!");
 }
+
+//this code was write with the classmate github user pinheiro000
