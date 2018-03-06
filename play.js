@@ -1,8 +1,8 @@
-alert("Aperte x nessa e na proxima janela.\nDepois tecle F12.\nDepois tecle CTRL + F5.\nSe for a segunda vez que le essa mensagem. Clique OK e comece o jogo");
+alert("BEM VINDO AO JOGO DA FORCA!");
 
 console.log("BEM VINDO AO JOGO DA FORCA");
 var tentativas = 6;
-var palavraSecreta = prompt("A palavra secreta eh:");
+var palavraSecreta = prompt("A palavra secreta eh?");
 var palavraAdivinhada = "";
 var advinhou = false;
 var adivinhada = [];
@@ -18,6 +18,7 @@ do {
   }
 
   if(ganhou) {
+	alert("GANHOU");
     console.log("GANHOU!");
     break;
   }
@@ -30,13 +31,14 @@ do {
     }
   }
   console.log(palavraAdivinhada);
-  var letra = prompt("Escolha a letra: ");
+  var letra = prompt(palavraAdivinhada + "\n\n ...Escolha uma letra: ");
   palavraAdivinhada = ""
   adivinhou = false;
   for (i = 0; i < palavraSecreta.length; i++) {
 
 
     if(palavraSecreta.charAt(i) == letra) {
+		alert("Acertou a Letra: " + letra);
         console.log("Acertou a Letra: " + letra);
         adivinhada[i] = true;
         adivinhou = true;
@@ -44,13 +46,16 @@ do {
 
   }
   if (adivinhou == false) {
-    console.log("Errou a letra:" + letra);
+	  alert("Errou a letra: " + letra);
+    console.log("Errou a letra: " + letra);
     tentativas--;
   }
+  alert("Chances de erro: " + tentativas);
   console.log("Chances de erro: " + tentativas);
 } while (tentativas > 0)
 console.log(palavraSecreta);
 if(tentativas == 0) {
+	alert("PERDEU");
   console.log("PERDEU!");
 }
 
